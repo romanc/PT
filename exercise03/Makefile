@@ -5,5 +5,8 @@ main.o: main.cpp integrator.h
 integrator.o: integrator.cpp integrator.h
 	g++ -O3 -unroll-loops -c integrator.cpp
 
+lib: main.cpp
+	g++ -O3 -unroll-loops -o main main.cpp -L ./ -lIntegrate
+
 clean: 
 	rm -f main *.o
