@@ -14,7 +14,7 @@ int main() {
 	int N = 1000;
 	
 	double I = simpson(&f, a, b, N);
-	std::cout << "The integral I of sin(x) from 0 to pi is: I=" << I << std::endl;
+	std::cout << "The integral (I) of sin(x) from 0 to pi is: I=" << I << std::endl;
 
 	return 0;
 }
