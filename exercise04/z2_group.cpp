@@ -2,6 +2,9 @@
 
 enum Z2 { Plus, Minus };
 
+/* concepts:
+ * constructable from 1
+ */
 template<class T>
 T identity_element(T dummy) { return T(1); }
 
@@ -25,6 +28,10 @@ std::ostream& operator<<(std::ostream& os, Z2 a)
 		return std::cout << "Minus";
 }
 
+/* concepts:
+ * copy-constructable (for passing arg by value)
+ * multiplicable with -1 via operator*=
+ */
 template<class T>
 T operator*(T a, Z2 b)
 {
@@ -32,6 +39,10 @@ T operator*(T a, Z2 b)
 	return a;
 }
 
+/* concepts:
+ * copy-constructable (for passing arg by value)
+ * multiplicable with -1 via operator*=
+ */
 template<class T>
 T operator*(Z2 b, T a)
 {
@@ -39,6 +50,11 @@ T operator*(Z2 b, T a)
 	return a;
 }
 
+/* concepts:
+ * copy-constructable (for passing arg by value)
+ * assignable
+ * multiplicable
+ */
 template<class T>
 T mypow(T a, unsigned int n)
 {
